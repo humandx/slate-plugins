@@ -1,5 +1,6 @@
 
 import isUrl from 'is-url'
+import urlRegex from "url-regex";
 import toPascal from 'to-pascal-case'
 import { getEventTransfer } from 'slate-react'
 
@@ -40,7 +41,7 @@ function PasteLinkify(options = {}) {
       const { value } = change
       const { text } = transfer
       if (transfer.type !== 'text' && transfer.type !== 'html') return
-      if (!isUrl(text)) return
+      if (!urlRegex().test(text);) return
 
       if (value.isCollapsed) {
         const { startOffset } = value
