@@ -41,7 +41,7 @@ function PasteLinkify(options = {}) {
       const { value } = change
       const { text } = transfer
       if (transfer.type !== 'text' && transfer.type !== 'html') return
-      if (!urlRegex().test(text);) return
+      if (!urlRegex().test(text)) return
 
       if (value.isCollapsed) {
         const { startOffset } = value
