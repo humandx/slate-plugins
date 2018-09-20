@@ -42,7 +42,7 @@ function PasteLinkify(options = {}) {
         return
       }
 
-      if (!urlRegex().test(text)) return
+      if (!urlRegex().test(text)) {
         return
       }
 
