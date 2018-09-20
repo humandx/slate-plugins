@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "is-url": "^1.2.2",
-    "to-pascal-case": "^1.0.0"
+    "to-pascal-case": "^1.0.0",
+    "url-regex": "^4.1.1"
   },
   "peerDependencies": {
     "slate": ">=0.37.0",

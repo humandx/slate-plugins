@@ -1,4 +1,5 @@
 import isUrl from 'is-url'
+import urlRegex from "url-regex";
 import toPascal from 'to-pascal-case'
 import { getEventTransfer } from 'slate-react'
 
@@ -41,7 +42,7 @@ function PasteLinkify(options = {}) {
         return
       }
 
-      if (!isUrl(text)) {
+      if (!urlRegex().test(text)) return
         return
       }
 
