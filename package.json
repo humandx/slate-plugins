@@ -63,22 +63,22 @@
     "slate-when": "*"
   },
   "scripts": {
-    "build": "npm build:rollup && npm build:parcel",
+    "build": "npm run build:rollup && npm run build:parcel",
     "build:parcel": "parcel build ./examples/index.html",
-    "build:production": "cross-env NODE_ENV=production npm build:rollup && cross-env NODE_ENV=production npm build:parcel",
+    "build:production": "cross-env NODE_ENV=production npm run build:rollup && cross-env NODE_ENV=production npm run build:parcel",
     "build:rollup": "rollup --config ./support/rollup/config.js",
     "clean": "rm -rf ./{build,dist,node_modules} && rm -rf ./packages/*/{dist,lib,node_modules}",
     "gh-pages": "gh-pages --dist ./dist",
-    "lint": "npm lint:eslint && npm lint:prettier",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint benchmark packages/*/src packages/*/test examples/*/*.js examples/dev/*/*.js",
     "lint:prettier": "prettier --list-different '**/*.{md,json,css}'",
     "open": "open http://localhost:9090",
     "prettier": "prettier --write '**/*.{js,jsx,md,json,css}'",
-    "release": "npm build:production && npm test && npm lint && lerna publish && npm gh-pages",
+    "release": "npm run build:production && npm run test && npm run lint && lerna publish && npm run gh-pages",
     "serve": "parcel ./examples/index.html",
     "start": "npm-run-all --parallel --print-label watch serve",
     "test": "cross-env BABEL_ENV=test FORBID_WARNINGS=true mocha --require babel-core/register ./packages/*/test/index.js",
-    "test:coverage": "cross-env NODE_ENV=test nyc npm test",
-    "watch": "npm build:rollup --watch"
+    "test:coverage": "cross-env NODE_ENV=test nyc npm run test",
+    "watch": "npm run build:rollup --watch"
   }
 }
